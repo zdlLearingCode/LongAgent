@@ -8,16 +8,16 @@ spring:
     name: agentCore
   ai:
     openai:
-      api-key:
-      base-url: https://api.deepseek.com  # 换成兼容服务的地址也行
+      api-key: ${OPENAI_API_KEY:}
+      base-url: ${OPENAI_BASE_URL:https://api.deepseek.com}
       chat:
         options:
-          model: deepseek-chat
+          model: ${OPENAI_MODEL:deepseek-chat}
     anthropic:
-      base-url:
-      api-key:
+      base-url: ${ANTHROPIC_BASE_URL:}
+      api-key: ${ANTHROPIC_API_KEY:}
   datasource:
-    url: jdbc:mysql://localhost:3306/agent_core?useUnicode=true&characterEncoding=utf8
-    username: root
-    password:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/agent_core?useUnicode=true&characterEncoding=utf8}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
     driver-class-name: com.mysql.cj.jdbc.Driver
