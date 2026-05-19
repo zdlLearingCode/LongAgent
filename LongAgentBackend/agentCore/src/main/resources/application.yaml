@@ -1,0 +1,23 @@
+server:
+  port: 6666
+  servlet:
+    context-path: /agent-core
+
+spring:
+  application:
+    name: agentCore
+  ai:
+    openai:
+      api-key:
+      base-url: https://api.deepseek.com  # 换成兼容服务的地址也行
+      chat:
+        options:
+          model: deepseek-chat
+    anthropic:
+      base-url:
+      api-key:
+  datasource:
+    url: jdbc:mysql://localhost:3306/agent_core?useUnicode=true&characterEncoding=utf8
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
